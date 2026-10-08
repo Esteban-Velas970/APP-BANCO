@@ -1,0 +1,16 @@
+--create
+create table Estudiantes(  
+id INT AUTO_INCREMENT PRIMARY KEY
+Estudiantes varchar(100)
+);
+
+-- insertar datos Estudiantes
+insert into Estudiantes(Nombre)
+values 
+('Esteban andres velasco')
+('andres montoya')
+
+--insertar datos carreras
+create table 
+id INT AUTO_INCREMENT PRIMARY KEY
+carreras varchar(40)

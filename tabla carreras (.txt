@@ -1,0 +1,31 @@
+CREATE TABLE carreras (
+    id INT AUTO_INCREMENT NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    PRIMARY KEY (id)
+);
+
+CREATE TABLE estudiantes (
+    id INT AUTO_INCREMENT NOT NULL,
+    nombre VARCHAR(50) NOT NULL,
+    carrera_id INT,
+    PRIMARY KEY (id),
+    FOREIGN KEY (carrera_id) REFERENCES carreras(Id)
+);
+
+INSERT INTO carreras (nombre) VALUES
+  ("ingenieria en sistemas"),
+  ("medicina"),
+  ("veterinaria");
+
+INSERT INTO estudiantes (nombre, carrera_id) VALUES
+  ('juan', 1),
+  ('pedro', 2),
+  ('Fabian Yusti', 1),
+  ('Juliana', 3);
+
+
+  SELECT estudiantes.nombre AS estudiante, carreras.nombre
+  FROM carreras
+  INNER JOIN estudiantes
+  ON carreras.id = estudiantes.carrera_id;
+  

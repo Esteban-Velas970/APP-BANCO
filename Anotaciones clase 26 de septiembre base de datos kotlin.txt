@@ -1,0 +1,59 @@
+
+Android room 
+val room_version 
+añadir complemento ksp se pega en Android room_versión
+
+
+(plugins) 
+
+alias(libs.plugin.android.application)
+alias(libs.plugin.kotlin.compose)
+
+
+
+
+
+
+
+
+@Entity(tableName = "entity_tasks")
+data class task(
+@primaryKey(autoGenerate = true)var id: long , 
+var title: string = "", 
+var description: String = "",
+var priority: int= -1) 
+
+
+
+
+
+
+@Dao
+
+interface TaskDao{
+
+	@Query(value= "SELECT * FROM entity_tasks")
+
+	suspend fun getAllTasks(): List<Task>
+
+
+	@Insert
+	suspend fun addTask(task: Task): Long
+
+
+	@Update
+	suspend fun updateTask(task: Task): Int
+
+	@Delete
+	suspend fun deleteTask(task: Task): Int
+
+
+}
+
+
+
+
+
+
+
+
